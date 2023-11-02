@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleGastos", "ControleGastos\ControleGastos.csproj", "{B9EBD383-74AB-4FEF-B562-0F9E044F2692}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{38EAF292-A865-47FA-B4F2-CABCF83CE7F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B9EBD383-74AB-4FEF-B562-0F9E044F2692}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9EBD383-74AB-4FEF-B562-0F9E044F2692}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9EBD383-74AB-4FEF-B562-0F9E044F2692}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38EAF292-A865-47FA-B4F2-CABCF83CE7F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38EAF292-A865-47FA-B4F2-CABCF83CE7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38EAF292-A865-47FA-B4F2-CABCF83CE7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38EAF292-A865-47FA-B4F2-CABCF83CE7F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
