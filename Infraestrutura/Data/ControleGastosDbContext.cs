@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infraestrutura.Data
 {
-    internal class ControleGastosDbContext : DbContext
+    public class ControleGastosDbContext : DbContext
     {
         public ControleGastosDbContext(DbContextOptions dbContextOptions) : base(dbContextOptions) { }
 
