@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleGastos", "ControleG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{38EAF292-A865-47FA-B4F2-CABCF83CE7F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestrutura", "Infraestrutura\Infraestrutura.csproj", "{D53A8489-0B42-4D7F-A876-8B8023EA8E15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{38EAF292-A865-47FA-B4F2-CABCF83CE7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38EAF292-A865-47FA-B4F2-CABCF83CE7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38EAF292-A865-47FA-B4F2-CABCF83CE7F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D53A8489-0B42-4D7F-A876-8B8023EA8E15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D53A8489-0B42-4D7F-A876-8B8023EA8E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D53A8489-0B42-4D7F-A876-8B8023EA8E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D53A8489-0B42-4D7F-A876-8B8023EA8E15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
