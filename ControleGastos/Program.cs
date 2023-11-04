@@ -1,5 +1,10 @@
 using Infraestrutura.Data;
+using Infraestrutura.Implementacoes;
+using Infraestrutura.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Servicos;
+using Servicos.Implementacoes;
+using Servicos.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +16,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ControleGastosDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ControleGastosConnectionString")));
+builder.Services.AddAutoMapper(typeof(Mapeamentos));
+builder.Services.AddScoped<ITransacaoServico, TransacaoServico>();
+builder.Services.AddScoped<ITransacaoRepositorio, TransacaoRepositorio>();
 
 var app = builder.Build();
 

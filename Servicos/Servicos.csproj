@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -7,8 +7,10 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="AutoMapper" Version="12.0.1" />
-		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+		<ProjectReference Include="..\Dominio\Dominio.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Infraestrutura\Infraestrutura.csproj" />
 	</ItemGroup>
 
 </Project>
