@@ -14,6 +14,11 @@ namespace Infraestrutura.Implementacoes
             this.dbContext = dbContext;
         }
 
+        public async Task<TransacaoModelo?> BuscarPorId(Guid id)
+        {
+            return await dbContext.Transacoes.FindAsync(id);
+        }
+
         public async Task<IEnumerable<TransacaoModelo>> BuscarTodos()
         {
             return await dbContext.Transacoes.ToListAsync();

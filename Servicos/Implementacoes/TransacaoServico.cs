@@ -17,6 +17,12 @@ namespace Servicos.Implementacoes
             this.transacaoRepositorio = transacaoRepositorio;
         }
 
+        public async Task<BuscarTransacaoDto?> BuscarPorId(Guid id)
+        {
+            var transacao = await transacaoRepositorio.BuscarPorId(id);
+            return transacao != null ? mapper.Map<BuscarTransacaoDto>(transacao) : null;
+        }
+
         public async Task<IEnumerable<BuscarTransacaoDto>> BuscarTodos()
         {
             return mapper.Map<IEnumerable<BuscarTransacaoDto>>(await transacaoRepositorio.BuscarTodos());

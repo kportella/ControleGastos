@@ -29,7 +29,14 @@ namespace ControleGastos.Controllers
 
         [HttpGet]
         [Route("{id:Guid}")]
-        public IActionResult BuscarPorId([FromRoute] Guid id) { return NotFound(); }
+        public async Task<IActionResult> BuscarPorId([FromRoute] Guid id) 
+        {
+            var transacao = await transacaoServico.BuscarPorId(id);
+
+            if (transacao == null) { return NotFound(); }
+
+            return Ok(transacao);
+        }
 
         [HttpPost]
         public async Task<IActionResult> Adicionar([FromBody] TransacaoDto transacao) 

@@ -11,5 +11,6 @@ namespace Servicos.Interfaces
     {
         Task<GravarTransacaoDto> Criar(TransacaoDto transacao);
         Task<IEnumerable<BuscarTransacaoDto>> BuscarTodos();
+        Task<BuscarTransacaoDto?> BuscarPorId(Guid id);
     }
 }
