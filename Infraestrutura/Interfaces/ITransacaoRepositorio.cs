@@ -10,5 +10,6 @@ namespace Infraestrutura.Interfaces
     public interface ITransacaoRepositorio
     {
         Task<TransacaoModelo> Criar(TransacaoModelo transacao);
+        Task<IEnumerable<TransacaoModelo>> BuscarTodos();
     }
 }

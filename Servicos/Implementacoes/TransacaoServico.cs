@@ -16,6 +16,12 @@ namespace Servicos.Implementacoes
             this.mapper = mapper;
             this.transacaoRepositorio = transacaoRepositorio;
         }
+
+        public async Task<IEnumerable<BuscarTransacaoDto>> BuscarTodos()
+        {
+            return mapper.Map<IEnumerable<BuscarTransacaoDto>>(await transacaoRepositorio.BuscarTodos());
+        }
+
         public async Task<GravarTransacaoDto> Criar(TransacaoDto transacao)
         {
             var transacaoModelo = mapper.Map<TransacaoModelo>(transacao);

@@ -1,11 +1,7 @@
 ﻿using Dominio.Modelos;
 using Infraestrutura.Data;
 using Infraestrutura.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infraestrutura.Implementacoes
 {
@@ -16,6 +12,11 @@ namespace Infraestrutura.Implementacoes
         public TransacaoRepositorio(ControleGastosDbContext dbContext)
         {
             this.dbContext = dbContext;
+        }
+
+        public async Task<IEnumerable<TransacaoModelo>> BuscarTodos()
+        {
+            return await dbContext.Transacoes.ToListAsync();
         }
 
         public async Task<TransacaoModelo> Criar(TransacaoModelo transacao)

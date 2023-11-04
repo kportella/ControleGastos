@@ -18,7 +18,14 @@ namespace ControleGastos.Controllers
         }
 
         [HttpGet]
-        public IActionResult BuscarTodos() { return NotFound(); }
+        public async Task<IActionResult> BuscarTodos() 
+        {
+
+            var transacoes = await transacaoServico.BuscarTodos();
+
+            return Ok(transacoes);
+        
+        }
 
         [HttpGet]
         [Route("{id:Guid}")]

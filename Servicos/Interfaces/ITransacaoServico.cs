@@ -10,5 +10,6 @@ namespace Servicos.Interfaces
     public interface ITransacaoServico
     {
         Task<GravarTransacaoDto> Criar(TransacaoDto transacao);
+        Task<IEnumerable<BuscarTransacaoDto>> BuscarTodos();
     }
 }
