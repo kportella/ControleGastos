@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Servicos.Dtos
 {
-    public class BuscarCategoriaDto : CategoriaDto
+    public class CategoriaDto
     {
-        public Guid Id { get; set; }
+        public string Categoria { get; set; }
+
     }
 }

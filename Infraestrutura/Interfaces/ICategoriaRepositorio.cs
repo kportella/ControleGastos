@@ -11,6 +11,7 @@ namespace Infraestrutura.Interfaces
     {
         Task<IEnumerable<CategoriaModelo>> BuscarTodos();
         Task<CategoriaModelo?> BuscarPorId(Guid id);
+        Task<CategoriaModelo> Criar(CategoriaModelo transacao);
 
     }
 }

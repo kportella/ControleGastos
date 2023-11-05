@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Dominio.Modelos;
 using Infraestrutura.Implementacoes;
 using Infraestrutura.Interfaces;
 using Servicos.Dtos;
@@ -27,6 +28,17 @@ namespace Servicos.Implementacoes
         public async Task<IEnumerable<BuscarCategoriaDto>> BuscarTodos()
         {
             return mapper.Map<IEnumerable<BuscarCategoriaDto>>(await categoriaRepositorio.BuscarTodos());
+        }
+
+        public async Task<GravarCategoriaDto> Criar(CategoriaDto categoria)
+        {
+            var categoriaModelo = mapper.Map<CategoriaModelo>(categoria);
+
+            categoriaModelo = await categoriaRepositorio.Criar(categoriaModelo);
+
+            var retornoCategoria = mapper.Map<GravarCategoriaDto>(categoriaModelo);
+
+            return retornoCategoria;
         }
     }
 }

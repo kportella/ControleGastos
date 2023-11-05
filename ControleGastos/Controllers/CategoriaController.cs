@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Servicos.Dtos;
 using Servicos.Implementacoes;
 using Servicos.Interfaces;
 
@@ -26,7 +27,7 @@ namespace ControleGastos.Controllers
 
         [HttpGet]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> BuscarPorId(Guid id)
+        public async Task<IActionResult> BuscarPorId([FromRoute] Guid id)
         {
             var categoria = await categoriaServico.BuscarPorId(id);
 
@@ -34,5 +35,14 @@ namespace ControleGastos.Controllers
 
             return Ok(categoria);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Adicionar([FromBody] CategoriaDto categoria)
+        {
+            var categoriaRetorno = await categoriaServico.Criar(categoria);
+            return CreatedAtAction(nameof(BuscarPorId), new { id = categoriaRetorno.Id }, categoriaRetorno);
+
+        }
+
     }
 }

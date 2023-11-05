@@ -23,5 +23,13 @@ namespace Infraestrutura.Implementacoes
         {
             return await dbContext.Categorias.FindAsync(id);
         }
+
+        public async Task<CategoriaModelo> Criar(CategoriaModelo categoria)
+        {
+            await dbContext.Categorias.AddAsync(categoria);
+            await dbContext.SaveChangesAsync();
+
+            return categoria;
+        }
     }
 }
