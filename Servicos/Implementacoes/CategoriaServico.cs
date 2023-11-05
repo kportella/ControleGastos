@@ -40,5 +40,17 @@ namespace Servicos.Implementacoes
 
             return retornoCategoria;
         }
+
+        public async Task<GravarCategoriaDto?> Atualizar(Guid id, CategoriaDto categoria)
+        {
+            var categoriaAtual = await categoriaRepositorio.BuscarPorId(id);
+            if (categoriaAtual == null) return null;
+
+            categoriaAtual.Categoria = categoria.Categoria;
+
+            await categoriaRepositorio.Atualizar();
+
+            return mapper.Map<GravarCategoriaDto>(categoriaAtual);
+        }
     }
 }

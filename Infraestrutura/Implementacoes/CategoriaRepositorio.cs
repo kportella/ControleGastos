@@ -31,5 +31,10 @@ namespace Infraestrutura.Implementacoes
 
             return categoria;
         }
+
+        public async Task Atualizar()
+        {
+            await dbContext.SaveChangesAsync();
+        }
     }
 }

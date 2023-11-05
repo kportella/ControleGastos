@@ -7,5 +7,7 @@ namespace Servicos.Interfaces
         Task<IEnumerable<BuscarCategoriaDto>> BuscarTodos();
         Task<BuscarCategoriaDto?> BuscarPorId(Guid id);
         Task<GravarCategoriaDto> Criar(CategoriaDto transacao);
+        Task<GravarCategoriaDto?> Atualizar(Guid id, CategoriaDto transacao);
+
     }
 }

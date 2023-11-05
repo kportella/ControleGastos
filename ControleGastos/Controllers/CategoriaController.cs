@@ -44,5 +44,16 @@ namespace ControleGastos.Controllers
 
         }
 
+        [HttpPut]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> Atualizar([FromRoute] Guid id, [FromBody] CategoriaDto categoriaDto)
+        {
+            var transacao = await categoriaServico.Atualizar(id, categoriaDto);
+
+            if (transacao == null) { return NotFound(); }
+
+            return Ok(transacao);
+        }
+
     }
 }
