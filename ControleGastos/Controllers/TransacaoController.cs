@@ -46,7 +46,15 @@ namespace ControleGastos.Controllers
         }
 
         [HttpPut]
-        public IActionResult Atualizar() { return NotFound(); }
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> Atualizar([FromRoute] Guid id, [FromBody] TransacaoDto transacaoDto ) 
+        {
+            var transacao = await transacaoServico.Atualizar(id, transacaoDto);
+
+            if (transacao == null) { return NotFound(); }
+
+            return Ok(transacao);
+        }
 
         [HttpDelete]
         public IActionResult Deletar() { return NotFound(); }

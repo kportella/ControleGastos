@@ -14,6 +14,11 @@ namespace Infraestrutura.Implementacoes
             this.dbContext = dbContext;
         }
 
+        public async Task Atualizar()
+        {
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task<TransacaoModelo?> BuscarPorId(Guid id)
         {
             return await dbContext.Transacoes.FindAsync(id);
