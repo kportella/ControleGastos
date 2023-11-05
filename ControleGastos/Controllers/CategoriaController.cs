@@ -55,5 +55,14 @@ namespace ControleGastos.Controllers
             return Ok(transacao);
         }
 
+        [HttpDelete]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> Deletar([FromRoute] Guid id)
+        {
+            await categoriaServico.Deletar(id);
+
+            return Ok();
+        }
+
     }
 }

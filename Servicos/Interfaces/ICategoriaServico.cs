@@ -8,6 +8,6 @@ namespace Servicos.Interfaces
         Task<BuscarCategoriaDto?> BuscarPorId(Guid id);
         Task<GravarCategoriaDto> Criar(CategoriaDto transacao);
         Task<GravarCategoriaDto?> Atualizar(Guid id, CategoriaDto transacao);
-
+        Task Deletar(Guid id);
     }
 }

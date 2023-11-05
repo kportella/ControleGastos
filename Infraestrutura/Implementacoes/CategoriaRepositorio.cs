@@ -36,5 +36,11 @@ namespace Infraestrutura.Implementacoes
         {
             await dbContext.SaveChangesAsync();
         }
+
+        public async Task Deletar(CategoriaModelo categoria)
+        {
+            dbContext.Categorias.Remove(categoria);
+            await dbContext.SaveChangesAsync();
+        }
     }
 }

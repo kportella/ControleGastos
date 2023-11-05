@@ -52,5 +52,14 @@ namespace Servicos.Implementacoes
 
             return mapper.Map<GravarCategoriaDto>(categoriaAtual);
         }
+
+        public async Task Deletar(Guid id)
+        {
+            var transacaoAtual = await categoriaRepositorio.BuscarPorId(id);
+
+            if (transacaoAtual == null) return;
+
+            await categoriaRepositorio.Deletar(transacaoAtual);
+        }
     }
 }
