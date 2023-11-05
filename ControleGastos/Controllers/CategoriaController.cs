@@ -23,5 +23,16 @@ namespace ControleGastos.Controllers
 
             return Ok(categorias);
         }
+
+        [HttpGet]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> BuscarPorId(Guid id)
+        {
+            var categoria = await categoriaServico.BuscarPorId(id);
+
+            if (categoria == null) { return NotFound(); }
+
+            return Ok(categoria);
+        }
     }
 }

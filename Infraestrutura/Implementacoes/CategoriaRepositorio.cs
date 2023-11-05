@@ -2,11 +2,6 @@
 using Infraestrutura.Data;
 using Infraestrutura.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infraestrutura.Implementacoes
 {
@@ -22,6 +17,11 @@ namespace Infraestrutura.Implementacoes
         public async Task<IEnumerable<CategoriaModelo>> BuscarTodos()
         {
             return await dbContext.Categorias.ToListAsync();
+        }
+
+        public async Task<CategoriaModelo?> BuscarPorId(Guid id)
+        {
+            return await dbContext.Categorias.FindAsync(id);
         }
     }
 }

@@ -17,6 +17,13 @@ namespace Servicos.Implementacoes
             this.mapper = mapper;
         }
 
+        public async Task<BuscarCategoriaDto?> BuscarPorId(Guid id)
+        {
+            var categoria = await categoriaRepositorio.BuscarPorId(id);
+            return categoria != null ? mapper.Map<BuscarCategoriaDto>(categoria) : null;
+
+        }
+
         public async Task<IEnumerable<BuscarCategoriaDto>> BuscarTodos()
         {
             return mapper.Map<IEnumerable<BuscarCategoriaDto>>(await categoriaRepositorio.BuscarTodos());

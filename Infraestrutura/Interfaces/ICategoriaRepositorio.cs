@@ -10,5 +10,7 @@ namespace Infraestrutura.Interfaces
     public interface ICategoriaRepositorio
     {
         Task<IEnumerable<CategoriaModelo>> BuscarTodos();
+        Task<CategoriaModelo?> BuscarPorId(Guid id);
+
     }
 }
