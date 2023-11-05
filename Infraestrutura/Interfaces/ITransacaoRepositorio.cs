@@ -13,5 +13,6 @@ namespace Infraestrutura.Interfaces
         Task<IEnumerable<TransacaoModelo>> BuscarTodos();
         Task<TransacaoModelo?> BuscarPorId(Guid id);
         Task Atualizar();
+        Task Deletar(TransacaoModelo transacao);
     }
 }

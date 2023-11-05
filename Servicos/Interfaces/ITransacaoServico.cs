@@ -13,5 +13,6 @@ namespace Servicos.Interfaces
         Task<IEnumerable<BuscarTransacaoDto>> BuscarTodos();
         Task<BuscarTransacaoDto?> BuscarPorId(Guid id);
         Task<GravarTransacaoDto?> Atualizar(Guid id, TransacaoDto transacao);
+        Task Deletar(Guid id);
     }
 }

@@ -54,5 +54,14 @@ namespace Servicos.Implementacoes
 
             return retornoTransacao;
         }
+
+        public async Task Deletar(Guid id)
+        {
+            var transacaoAtual = await transacaoRepositorio.BuscarPorId(id);
+
+            if (transacaoAtual == null) return;
+
+            await transacaoRepositorio.Deletar(transacaoAtual);
+        }
     }
 }

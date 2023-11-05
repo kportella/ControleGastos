@@ -42,7 +42,7 @@ namespace ControleGastos.Controllers
         public async Task<IActionResult> Adicionar([FromBody] TransacaoDto transacao) 
         {
             var transacaoRetorno = await transacaoServico.Criar(transacao);
-            return CreatedAtAction(nameof(Adicionar), new {id = transacaoRetorno.Id}, transacaoRetorno);
+            return CreatedAtAction(nameof(BuscarPorId), new {id = transacaoRetorno.Id}, transacaoRetorno);
         }
 
         [HttpPut]
@@ -57,7 +57,13 @@ namespace ControleGastos.Controllers
         }
 
         [HttpDelete]
-        public IActionResult Deletar() { return NotFound(); }
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> Deletar([FromRoute] Guid id) 
+        {
+            await transacaoServico.Deletar(id);
+
+            return Ok();
+        }
         
     }
 }

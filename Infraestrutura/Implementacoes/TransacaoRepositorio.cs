@@ -36,5 +36,11 @@ namespace Infraestrutura.Implementacoes
 
             return transacao;
         }
+
+        public async Task Deletar(TransacaoModelo transacao)
+        {
+            dbContext.Transacoes.Remove(transacao);
+            await dbContext.SaveChangesAsync();
+        }
     }
 }
