@@ -11,6 +11,8 @@ namespace Servicos
             CreateMap<TransacaoModelo, TransacaoDto>().ReverseMap();
             CreateMap<TransacaoModelo, GravarTransacaoDto>().ReverseMap();
             CreateMap<TransacaoModelo, BuscarTransacaoDto>().ReverseMap();
+
+            CreateMap<CategoriaModelo, BuscarCategoriaDto>().ReverseMap();
         }
     }
 }

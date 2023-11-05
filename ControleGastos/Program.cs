@@ -19,6 +19,8 @@ builder.Services.AddDbContext<ControleGastosDbContext>(options =>
 builder.Services.AddAutoMapper(typeof(Mapeamentos));
 builder.Services.AddScoped<ITransacaoServico, TransacaoServico>();
 builder.Services.AddScoped<ITransacaoRepositorio, TransacaoRepositorio>();
+builder.Services.AddScoped<ICategoriaServico, CategoriaServico>();
+builder.Services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
 
 var app = builder.Build();
 
